@@ -1,0 +1,157 @@
+<!Doctype html>
+
+<html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+
+  <title>code player</title>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js "></script>
+    <link  rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+
+    <script type="text/javascript" src="jquery-ui/external/jquery/jquery.js"></script>
+    <script  type=text/javascript src="jquery-ui/jquery-ui.min.js"></script>
+    <style type="text/css">
+
+
+
+        body{
+            margin:0px 0px;
+            font-family: system;
+        }
+
+        #cap{
+
+            height:34px;
+            float:left;
+        }
+
+        .logo{
+            padding:2px;
+            font-weight:bold;
+            font-size: 21px;
+            float:left;
+        }
+
+
+        #button-container{
+            padding:1px;
+            margin:0 auto;
+            width:224px;
+
+        }
+        .buttons{
+
+            float:left;
+            border:1px solid gray;
+            padding:5px;
+
+            border-right:none;
+        }
+        #htmlPanel{
+
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+                    }
+        .active{
+            background-color:gainsboro;
+        }
+        #outputPanel{
+            border-right:1px solid gray;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+        }
+
+
+        #header{
+           background-color:#EDEDED ;
+            width:100%;
+            height:35px;
+        }
+        #login{
+            float:right;
+            padding:4px;
+            background-color:#FFEB3B;
+        }
+        .highlight{
+
+            background-color: gray;
+        }
+
+        textarea{
+
+
+            resize:horizontal;
+            border-top:none;
+            border-right-color:gray;
+            font-family: "tahoma";
+            color:black;
+        }
+        iframe{
+
+            float:right;
+            margin:0px;
+            border: none;
+        }
+
+
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+<div id="header">
+<div ><img id="cap" src="capture.png"></div>
+<div class="logo" ><b>codeplayer</b></div>
+<div id="button-container">
+
+    <div class="buttons active" id="htmlPanel" >HTML</div>
+    <div class="buttons" id="cssPanel">css</div>
+    <div class="buttons" id="javascriptPanel">javascript</div>
+    <div class="buttons active" id="outputPanel">output</div>
+</div>
+    <div id="login">login or register</div>
+
+</div>
+<div id="bodycontainer">
+
+    <textarea class="texts" id="texthtml" >what is your name</textarea>
+
+    <iframe class="texts" id="iframes"> </iframe>
+
+</div>
+<script type="text/javascript">
+
+    $(".buttons").hover(function () {
+            $(this).addClass("highlight");},
+        function(){
+            $(this).removeClass("highlight");
+        }
+    );
+
+    $(".buttons").click(function () {
+        $(this).toggleClass("active");
+    });
+
+    $(".texts").height($(window).height()-$("#header").height());
+    $(".texts").width($(window).width()/2-8);
+
+    $("iframe").contents().find( "#htmlpanel" ).html($("#htmlpanel").val());
+
+
+</script>
+</body>
+
+
+
+
+
+</html>
